@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:03:25 by agianico          #+#    #+#             */
-/*   Updated: 2021/07/12 18:58:56 by agianico         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:53:14 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,32 +47,104 @@ void	replace_contact(Contact list[8])
 	add_contact(list, 7);
 }
 
-void	print_info(Contact list[8])
+void	print_things(std::string str)
 {
 	int i;
 
+
 	i = 0;
 	while(i < 9)
-		std:cout
+	{
+		std::cout << str[i];
+		i++;
+	}
+	std::cout << '.';
+}
+
+void	print_info(Contact list[8], int index)
+{
+	std::cout << "FIRST NAME: " << list[index].get_first_name() << std::endl;
+	std::cout << "LAST NAME: " << list[index].get_last_name() << std::endl;
+	std::cout << "NICKNAME: " << list[index].get_nickname() << std::endl;
+	std::cout << "PHONE NUMBER: " << list[index].get_phone_number() << std::endl;
+	std::cout << "DARKEST SECRET: " << list[index].get_darkest_secret() << std::endl;
+}
+
+bool	isNumber(std::string val)
+{
+	int i = 0;
+	while(val[i])
+	{
+		if (std::isdigit(val[i]) == 0)
+			return false;
+		i++;
+	}
+	return true;
 }
 
 void	search_contacts(Contact list[8], int contact_numbers)
 {
 	int	j;
+	int	index;
 
 	j = 0;
 	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
 	while(j < contact_numbers)
 	{
-		std::cout << "|        " << j + 1 << "|";
-		if (list[j].get_first_name().length() < 10)
-			print_info(list);
+		std::cout << "|         " << j + 1 << "|";
+		if (list[j].get_first_name().length() > 10)
+			print_things(list[j].get_first_name());
+		else
+		{
+			for(int i = 0; i < 10 - int(list[j].get_first_name().length()); i++)
+				std::cout << ' ';
+			std::cout << list[j].get_first_name();
+		}
+		std::cout << '|';
+		if (list[j].get_last_name().length() > 10)
+			print_things(list[j].get_last_name());
+		else
+		{
+			for(int i = 0; i < 10 - int(list[j].get_last_name().length()); i++)
+				std::cout << ' ';
+			std::cout << list[j].get_last_name();
+		}
+		std::cout << '|';
+		if (list[j].get_nickname().length() > 10)
+			print_things(list[j].get_nickname());
+		else
+		{
+			for(int i = 0; i < 10 - int(list[j].get_nickname().length()); i++)
+				std::cout << ' ';
+			std::cout << list[j].get_nickname();
+		}
+		std::cout << '|' << std::endl;
+		j++;
+	}
+	while (1)
+	{
+		std::string val;
+		std::cout << "Please enter the index number of the contact that you want the information: ";
+		getline(std::cin, val);
+		if (isNumber(val) == true)
+		{
+			index = stoi(val);
+			if (index > 0 && index < contact_numbers + 1)
+			{
+				print_info(list, index - 1);
+				break ;
+			}
+			else
+				std::cout << "Please enter a valid index" << std::endl;
+		}
+		else
+			std::cout << "Please type only numbers between 1 and 8" << std::endl;
 	}
 }
 
 int		main()
 {
-	Contact list[8];
+	PhoneBook PhoneBook;
 	std::string input;
 	int	i;
 
@@ -85,27 +157,17 @@ int		main()
 		{
 			if (i < 8)
 			{
-				add_contact(list, i);
+				add_contact(PhoneBook.list, i);
 				i++;
 			}
 			else
 			{
-				replace_contact(list);
-				i = 7;
+				replace_contact(PhoneBook.list);
+				i = 8;
 			}
-			//std::cout << list[0].get_first_name() << std::endl;
-			//std::cout << list[1].get_first_name() << std::endl;
-			//std::cout << list[2].get_first_name() << std::endl;
-			//std::cout << list[3].get_first_name() << std::endl;
-			//std::cout << list[4].get_first_name() << std::endl;
-			//std::cout << list[5].get_first_name() << std::endl;
-			//std::cout << list[6].get_first_name() << std::endl;
-			//std::cout << list[7].get_first_name() << std::endl;
 		}
 		else if (input == "SEARCH")
-		{
-			search_contacts(list, i);
-		}
+			search_contacts(PhoneBook.list, i);
 		else if (input == "EXIT")
 		{
 			std::cout << "thank you for use my phonebook program" << std::endl;
