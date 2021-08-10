@@ -6,7 +6,13 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 17:48:07 by agianico          #+#    #+#             */
-/*   Updated: 2021/07/13 17:48:08 by agianico         ###   ########.fr       */
+/*   Updated: 2021/08/10 19:06:52 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+int main()
+{
+	ran
+}

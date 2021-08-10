@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 18:04:47 by agianico          #+#    #+#             */
-/*   Updated: 2021/07/13 18:21:22 by agianico         ###   ########.fr       */
+/*   Updated: 2021/08/10 18:57:56 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class	Zombie
 		std::string name;
 
 	public:
+		Zombie(std::string name="");
+		~Zombie();
 		void announce(void);
 };
 
