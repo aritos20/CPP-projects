@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:03:25 by agianico          #+#    #+#             */
-/*   Updated: 2021/07/13 16:53:14 by agianico         ###   ########.fr       */
+/*   Updated: 2021/08/10 16:58:19 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	print_info(Contact list[8], int index)
 bool	isNumber(std::string val)
 {
 	int i = 0;
+	if (!val[i])
+		return false;
 	while(val[i])
 	{
 		if (std::isdigit(val[i]) == 0)
@@ -124,11 +126,13 @@ void	search_contacts(Contact list[8], int contact_numbers)
 	while (1)
 	{
 		std::string val;
-		std::cout << "Please enter the index number of the contact that you want the information: ";
+		std::cout << "Please enter the index number of the contact that you want the information or type 42 to go back to menu: ";
 		getline(std::cin, val);
 		if (isNumber(val) == true)
 		{
 			index = stoi(val);
+			if (index == 42)
+				break ;
 			if (index > 0 && index < contact_numbers + 1)
 			{
 				print_info(list, index - 1);

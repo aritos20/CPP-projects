@@ -6,7 +6,7 @@
 #    By: agianico <agianico@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/17 17:03:21 by agianico          #+#    #+#              #
-#    Updated: 2021/06/17 17:03:22 by agianico         ###   ########.fr        #
+#    Updated: 2021/08/10 17:38:32 by agianico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,22 +16,14 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = megaphone.cpp \
-
-OBJ = $(SRC:.cpp=.o)
+SRCS = megaphone.cpp \
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $<
-
-clean:
-	rm -f $(OBJ)
-
-fclean: clean
+fclean:
 	rm -f $(NAME)
 
 re: fclean all
