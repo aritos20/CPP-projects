@@ -1,27 +1,18 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/13 18:21:27 by agianico          #+#    #+#             */
-/*   Updated: 2021/08/10 19:06:24 by agianico         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name):
-name(name)
-{}
-
+Zombie::Zombie()
+{
+    std::cout << "The Zombie has been created" << std::endl;
+}
 Zombie::~Zombie()
 {
-	std::cout << this->name << " is diying again" << std::endl;
+    std::cout << this->name << " is destroyed" << std::endl;
 }
-
-void	Zombie::announce(void)
+void	Zombie::setName(std::string newName)
 {
-	std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+    this->name = newName;
+}
+void Zombie::announce()
+{
+    std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

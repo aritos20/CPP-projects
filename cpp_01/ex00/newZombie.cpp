@@ -1,12 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 18:56:23 by agianico          #+#    #+#             */
-/*   Updated: 2021/08/10 18:56:24 by agianico         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Zombie.hpp"
 
+Zombie* newZombie( std::string name )
+{
+    Zombie *zombie = new Zombie;
+
+    zombie->setName(name);
+    return zombie;
+}
