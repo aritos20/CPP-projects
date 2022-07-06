@@ -16,7 +16,6 @@ int main(void)
 {
     std::string name;
     int         N;
-    Zombie      *zombieHorde;
 
     std::cout << "Ponle un nombre a tu Zombie:" << std::endl;
     std::getline(std::cin, name);
