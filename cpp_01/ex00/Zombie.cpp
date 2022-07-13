@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:41:34 by agianico          #+#    #+#             */
-/*   Updated: 2022/06/21 19:41:35 by agianico         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:12:15 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	Zombie::setName(std::string newName)
 {
     this->name = newName;
 }
-void Zombie::announce()
+void Zombie::announce( void )
 {
     std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

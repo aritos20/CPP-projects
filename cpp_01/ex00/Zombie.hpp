@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:41:39 by agianico          #+#    #+#             */
-/*   Updated: 2022/06/21 19:41:40 by agianico         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:11:54 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class	Zombie
 	Zombie();
 	~Zombie();
 
-	void	setName(std::string newName);
+	void	setName( std::string newName );
 
-	void	announce();
+	void	announce( void );
 };
 
 Zombie* newZombie( std::string name );

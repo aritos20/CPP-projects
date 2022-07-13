@@ -10,16 +10,9 @@ all: $(NAME)
 $(NAME):    $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-sanitize: $(NAME)
-	$(CXX) $(CPPFLAGS) -fsanitize=address $(OBJS) -o $(NAME)
-
-
-NOFLAGS:    $(OBJS)
-	$(CXX) $(OBJS) -o $(NAME)
-
 clean:
 	rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
 
-re:    fclean ally
+re:    fclean all

@@ -6,13 +6,13 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:41:19 by agianico          #+#    #+#             */
-/*   Updated: 2022/06/21 19:41:20 by agianico         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:23:53 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
+int main( void )
 {
     std::string name;
     std::cout << "Ponle un nombre a tu Zombie:" << std::endl;

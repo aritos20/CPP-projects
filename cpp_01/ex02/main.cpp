@@ -6,13 +6,13 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:41:59 by agianico          #+#    #+#             */
-/*   Updated: 2022/06/21 19:42:00 by agianico         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:23:59 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(void)
+int main( void )
 {
     std::string str = "HI THIS IS BRAIN";
     std::string *ptr = &str;
