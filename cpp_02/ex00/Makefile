@@ -1,5 +1,17 @@
-NAME    = replace
-SRCS    = main.cpp
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: agianico <agianico@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/07/19 14:58:58 by agianico          #+#    #+#              #
+#    Updated: 2022/07/19 15:32:48 by agianico         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME    = fixed
+SRCS    = main.cpp Fixed.cpp
 
 OBJS    = $(SRCS:.cpp=.o)
 CXX        = clang++
@@ -9,13 +21,6 @@ all: $(NAME)
 
 $(NAME):    $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
-
-sanitize: $(NAME)
-	$(CXX) $(CPPFLAGS) -fsanitize=address $(OBJS) -o $(NAME)
-
-
-NOFLAGS:    $(OBJS)
-	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
