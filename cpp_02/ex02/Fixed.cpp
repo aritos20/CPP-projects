@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 17:31:53 by agianico          #+#    #+#             */
-/*   Updated: 2022/07/27 15:57:58 by agianico         ###   ########.fr       */
+/*   Created: 2022/07/26 20:10:55 by agianico          #+#    #+#             */
+/*   Updated: 2022/07/27 19:01:42 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,122 @@ Fixed &Fixed::operator=(const Fixed &other)
     std::cout << "Assignation operator called" << std::endl;
     setRawBits(other.getRawBits());
     return *this;
+}
+
+bool Fixed::operator>(Fixed const &other) const
+{
+	return getRawBits() > other.getRawBits();
+}
+
+bool Fixed::operator<(Fixed const &other) const
+{
+	return getRawBits() < other.getRawBits();
+}
+
+bool Fixed::operator>=(Fixed const &other) const
+{
+	return getRawBits() >= other.getRawBits();
+}
+
+bool Fixed::operator<=(Fixed const &other) const
+{
+	return getRawBits() <= other.getRawBits();
+}
+
+bool Fixed::operator==(Fixed const &other) const
+{
+	return getRawBits() == other.getRawBits();
+}
+
+bool Fixed::operator!=(Fixed const &other) const
+{
+	return getRawBits() != other.getRawBits();
+}
+
+Fixed Fixed::operator+(Fixed const &other)
+{
+	Fixed fixed;
+	fixed.setRawBits(getRawBits() + other.getRawBits());
+	return fixed;
+}
+
+Fixed Fixed::operator-(Fixed const &other)
+{
+	Fixed fixed;
+	fixed.setRawBits(getRawBits() - other.getRawBits());
+	return fixed;
+}
+
+Fixed Fixed::operator*(Fixed const &other)
+{
+	Fixed fixed;
+	fixed.setRawBits((getRawBits() * other.getRawBits()) >> _fractional_bits_numbers);
+	return fixed;
+}
+
+Fixed Fixed::operator/(Fixed const &other)
+{
+	Fixed fixed;
+	fixed.setRawBits((getRawBits() << _fractional_bits_numbers) / other.getRawBits());
+	return fixed;
+}
+
+Fixed &Fixed::operator++(void)
+{
+	_fixed_point_number++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed fixed(*this);
+	operator++();
+	return fixed;
+}
+
+Fixed &Fixed::operator--(void)
+{
+	_fixed_point_number--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed fixed(*this);
+	operator--();
+	return fixed;
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed &Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
 }
 
 int     Fixed::getRawBits( void ) const
