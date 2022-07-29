@@ -32,7 +32,6 @@ Fixed::Fixed( const int value )
 
 Fixed::Fixed( const float f_value )
 {
-    (void)f_value;
     std::cout << "Float constructor called" << std::endl;
 	_fixed_point_number = (int)roundf((f_value * (1 << _fractional_bits_numbers)));
 }
