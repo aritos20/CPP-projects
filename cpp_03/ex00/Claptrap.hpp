@@ -21,16 +21,12 @@ class ClapTrap {
         ~ClapTrap();
 
         // Assign operator overload
-        //ClapTrap &operator=( const ClapTrap &other);
+        ClapTrap &operator=( const ClapTrap &other);
 
         // Member functions
         void    attack( std::string const &target );
         void    takeDamage( unsigned int amount );
         void    beRepaired( unsigned int amount );
-
-        // Setter and Getter
-        //int     getRawBits( void ) const;
-        //void    setRawBits( int const raw );
 };
 
 #endif

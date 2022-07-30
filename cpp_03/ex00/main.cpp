@@ -2,9 +2,9 @@
 
 int main( void )
 {
-    ClapTrap a( "aritos" );
+    ClapTrap a("aritos");
 
-    a.attack("tu vieja 13");
+    a.attack("TuVieja13");
     a.takeDamage(5);
     a.beRepaired(7);
 
