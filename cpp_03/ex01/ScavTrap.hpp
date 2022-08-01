@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 15:44:30 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 18:35:06 by agianico         ###   ########.fr       */
+/*   Created: 2022/08/01 15:44:54 by agianico          #+#    #+#             */
+/*   Updated: 2022/08/01 16:13:54 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main( void )
-{
-    ClapTrap a("aritos");
+class ScavTrap : public ClapTrap {
+	public:
+		// Constructor
+		ScavTrap();
+		// Copy constructor
+		ScavTrap( const ScavTrap &src );
+		// Constructor overload
+		ScavTrap( std::string name );
+		// Destructor
+		~ScavTrap();
 
-    a.attack("TuVieja13");
-    a.takeDamage(5);
-    a.beRepaired(7);
+		// Assign operator overload
+		ScavTrap &operator=( const ScavTrap &other);
 
-    return (0);
-}
+		// Member functions
+		void attack( std::string const &target );
+		void guardGate();
+};

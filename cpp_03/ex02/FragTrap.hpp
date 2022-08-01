@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 15:44:30 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 18:35:06 by agianico         ###   ########.fr       */
+/*   Created: 2022/08/01 16:43:31 by agianico          #+#    #+#             */
+/*   Updated: 2022/08/01 17:02:28 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main( void )
-{
-    ClapTrap a("aritos");
+class FragTrap : public ClapTrap {
+	public:
+		// Constructor
+		FragTrap();
+		// Copy constructor
+		FragTrap( const FragTrap &src );
+		// Constructor overload
+		FragTrap( std::string name );
+		// Destructor
+		~FragTrap();
 
-    a.attack("TuVieja13");
-    a.takeDamage(5);
-    a.beRepaired(7);
+		// Assign operator overload
+		FragTrap &operator=( const FragTrap &other);
 
-    return (0);
-}
+		// Member functions
+		void highFivesGuys(void);
+
+};

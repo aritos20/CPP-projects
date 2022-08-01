@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 15:44:26 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 15:44:27 by agianico         ###   ########.fr       */
+/*   Created: 2022/08/01 15:44:41 by agianico          #+#    #+#             */
+/*   Updated: 2022/08/01 16:11:14 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-    private:
+    protected:
         std::string _name;
         int         _hitpoints;
         int         _energy_points;

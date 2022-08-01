@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: agianico <agianico@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/01 15:44:34 by agianico          #+#    #+#              #
-#    Updated: 2022/08/01 16:14:44 by agianico         ###   ########.fr        #
+#    Created: 2022/08/01 15:44:48 by agianico          #+#    #+#              #
+#    Updated: 2022/08/01 16:14:55 by agianico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    = ClapTrap
-SRCS    = main.cpp ClapTrap.cpp
+NAME    = ScavTrap
+SRCS    = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS    = $(SRCS:.cpp=.o)
 CXX        = clang++

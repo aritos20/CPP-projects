@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 15:44:21 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 15:52:34 by agianico         ###   ########.fr       */
+/*   Created: 2022/08/01 15:44:38 by agianico          #+#    #+#             */
+/*   Updated: 2022/08/01 16:57:21 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap Default constructor called" << std::endl;
     this->_name = "default";
     this->_hitpoints = 10;
     this->_energy_points = 10;
@@ -23,32 +23,32 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap( const ClapTrap &src )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
     *this = src;
 }
 
 ClapTrap::ClapTrap( std::string name )
 {
-    std::cout << "Name constructor called" << std::endl;
+    std::cout << "ClapTrap Name constructor called" << std::endl;
     this->_name = name;
     this->_hitpoints = 10;
     this->_energy_points = 10;
     this->_attack_damage = 0;
 }
 
+ClapTrap::~ClapTrap()
+{
+    std::cout << "ClapTrap Destructor Called" << std::endl;
+}
+
 ClapTrap &ClapTrap::operator=( const ClapTrap &other)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "ClapTrap Assignation operator called" << std::endl;
     this->_name = other._name;
     this->_hitpoints = other._hitpoints;
     this->_energy_points = other._energy_points;
     this->_attack_damage = other._attack_damage;
     return *this;
-}
-
-ClapTrap::~ClapTrap()
-{
-    std::cout << "Destructor Called" << std::endl;
 }
 
 void ClapTrap::attack( std::string const &target )

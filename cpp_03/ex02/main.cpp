@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 15:44:30 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 18:35:06 by agianico         ###   ########.fr       */
+/*   Created: 2022/08/01 16:44:11 by agianico          #+#    #+#             */
+/*   Updated: 2022/08/01 18:38:16 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main( void )
+int main(void)
 {
-    ClapTrap a("aritos");
+	FragTrap a("aritos");
 
-    a.attack("TuVieja13");
-    a.takeDamage(5);
-    a.beRepaired(7);
+	a.highFivesGuys();
 
-    return (0);
+	return (0);
 }
