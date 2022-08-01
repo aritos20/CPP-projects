@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 16:43:31 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 17:02:28 by agianico         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:20:20 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class FragTrap : public ClapTrap {
 		FragTrap &operator=( const FragTrap &other);
 
 		// Member functions
+		void attack( std::string const &target );
 		void highFivesGuys(void);
 
 };

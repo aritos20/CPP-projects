@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 16:42:59 by agianico          #+#    #+#             */
-/*   Updated: 2022/08/01 17:03:07 by agianico         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:20:57 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ FragTrap &FragTrap::operator=( const FragTrap &other )
     this->_energy_points = other._energy_points;
     this->_attack_damage = other._attack_damage;
     return *this;
+}
+
+void FragTrap::attack( std::string const &target )
+{
+	std::cout << "FragTrap " << this->_name << " attack " << target << " causing " << this->_attack_damage << " points of damage!" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)
