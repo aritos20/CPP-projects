@@ -6,7 +6,7 @@
 /*   By: agianico <agianico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 17:31:53 by agianico          #+#    #+#             */
-/*   Updated: 2022/07/27 15:57:58 by agianico         ###   ########.fr       */
+/*   Updated: 2022/08/01 14:52:59 by agianico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Fixed::Fixed( const int value )
 
 Fixed::Fixed( const float f_value )
 {
-    (void)f_value;
     std::cout << "Float constructor called" << std::endl;
 	_fixed_point_number = (int)roundf((f_value * (1 << _fractional_bits_numbers)));
 }
