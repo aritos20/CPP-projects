@@ -6,12 +6,12 @@
 #    By: agianico <agianico@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 15:44:48 by agianico          #+#    #+#              #
-#    Updated: 2022/08/02 12:41:49 by agianico         ###   ########.fr        #
+#    Updated: 2022/08/02 13:26:15 by agianico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    = FragTrap
-SRCS    = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
+NAME    = DiamondTrap
+SRCS    = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 
 OBJS    = $(SRCS:.cpp=.o)
 CXX        = clang++
